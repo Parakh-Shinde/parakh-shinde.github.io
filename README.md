@@ -1,39 +1,63 @@
-# Parakh Shinde — Security Engineering Portfolio
+# Parakh Shinde Security Engineering Portfolio
 
-A 3D animated, responsive portfolio for GitHub Pages. Open `index.html` directly or serve this directory with any static HTTP server. No build step is required.
+> Static GitHub Pages portfolio with a 3D animated profile experience, recruiter-focused cybersecurity positioning, and verified project evidence.
 
-## Files
+Live site: [parakh-shinde.github.io](https://parakh-shinde.github.io/)
 
-- `index.html` — the complete page, CSS and JavaScript
-- `pic1111.jpg` — the existing portrait
-- `Parakh-Shinde--Resume.pdf` — legacy resume asset; currently not linked by the page
+## Overview
 
-## Motion and interactions
+This repository hosts my public security-engineering portfolio. The site is built as a single static `index.html` file with embedded CSS and JavaScript, so it can be served directly by GitHub Pages without a build step.
 
-- Layered CSS 3D portrait with a back plate, glass plane and floating labels
-- Pointer-driven 3D tilt, gentle idle rotation, dimensional orbital rings and a rotating wireframe cube
-- Subtle orbital graphics, animated lab trace and scrolling topic strip
-- Staggered section reveals, smooth anchor scrolling and hover effects
-- Responsive navigation with keyboard access, Escape handling and active section indication
-- A **Motion on/off** button that remembers the visitor's preference
-- Reduced-motion system settings respected by default; content and navigation remain available without JavaScript
+The portfolio highlights AI Security, Red Team, Cloud IAM, Detection Engineering, SOC, and Incident Response work. Project claims are intentionally scoped to evidence available in the linked repositories.
 
-Animations use CSS, IntersectionObserver, requestAnimationFrame and the Web Animations API. No external JavaScript libraries are required. Google Fonts are optional; the page includes system-font fallbacks.
+## Implemented Features
 
-## Content
+- Responsive 3D profile hero with layered portrait depth, pointer tilt, idle motion, orbital rings, and wireframe cube animation
+- Smooth section reveal animations and native anchor scrolling
+- Motion on/off control with saved visitor preference
+- Reduced-motion support for accessibility
+- Keyboard-accessible mobile navigation with Escape handling and active-section tracking
+- Recruiter-facing project cards for AegisForge, GCP IAMGraph, Automated LLM Vulnerability Assessment, AWS Cloud Security Monitoring, and AI SOC Triage
+- No build system or external JavaScript framework required
 
-Featured work: AegisForge, GCP-IAMGraph, Automated LLM Vulnerability Assessment, AWS Cloud Security Monitoring, and Enterprise SOC Monitoring. Project claims are scoped to the documented repositories and lab results. Replace the legacy resume with a verified current version before restoring a resume link.
+## Repository Structure
 
-## Local preview
+| File | Purpose |
+| --- | --- |
+| `index.html` | Complete portfolio page, CSS, and JavaScript |
+| `pic1111.jpg` | Portrait image used in the 3D profile section |
+| `Parakh-Shinde--Resume.pdf` | Legacy resume asset; not linked from the live page until replaced with a verified current resume |
+| `README.md` | Repository documentation |
+| `README.txt` | Short plain-text project note |
 
-```sh
+## Local Preview
+
+```bash
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000`. Check the desktop and mobile layouts, navigation, and both motion settings.
+Open `http://localhost:8000` and review:
 
-## GitHub Pages
+- Desktop and mobile layout
+- Navigation and section anchors
+- Motion on/off behavior
+- Reduced-motion behavior
+- Project and contact links
 
-Repository **Settings → Pages → Deploy from a branch → main → / (root)**.
+## Deployment
 
-Live address: https://parakh-shinde.github.io/
+GitHub Pages serves the repository from:
+
+```text
+main / root
+```
+
+No build command is required. A commit to `main` updates the live site through GitHub Pages.
+
+## Design Notes
+
+The visual style is intentionally technical and restrained: dark interface, mint-green security accents, animated 3D profile treatment, dense project evidence, and minimal marketing copy. The page is meant to support job applications by making the strongest projects easy to inspect quickly.
+
+## Responsible Positioning
+
+All offensive-security and red-team style content linked from the portfolio is presented as isolated, authorized lab work. The portfolio avoids unsupported claims about production impact, certifications, or professional experience.
