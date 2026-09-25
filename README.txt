@@ -5,7 +5,7 @@ Keep pic1111.jpg beside index.html.
 Open index.html in a browser, or run:
 python -m http.server 8000
 
-The portfolio uses native CSS and JavaScript animations with no build step.
+The portfolio uses layered CSS 3D and native JavaScript animations with no build step.
 Use the Motion on/off control to pause effects. The page respects reduced-motion
 settings by default and remains readable when JavaScript is disabled.
 

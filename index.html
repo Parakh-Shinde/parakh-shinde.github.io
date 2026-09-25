@@ -71,6 +71,33 @@
     html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="off"] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
     html[data-motion="off"] [data-reveal]{opacity:1!important;transform:none!important}html[data-motion="off"] .profile-card{transform:none!important}
     @media(prefers-reduced-motion:reduce){html:not([data-motion="on"]) *{scroll-behavior:auto!important}}
+
+    /* Layered CSS 3D scene: back plate, portrait, glass, and floating labels. */
+    .portrait-stage{perspective:1100px;transform-style:preserve-3d}
+    .portrait-float,.portrait-drift{transform-style:preserve-3d}
+    .portrait-drift{animation:portrait-drift 10s ease-in-out infinite}
+    .profile-rig{--rx:0deg;--ry:0deg;--px:50%;--py:40%;position:relative;transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .4s var(--ease)}
+    .profile-card{transform:translateZ(18px);box-shadow:0 25px 65px #0007;--px:inherit;--py:inherit}
+    .depth-plate{position:absolute;inset:8px -12px -14px 12px;border:1px solid #5f8967;background:linear-gradient(140deg,#203d2a,#0b1810);border-radius:3px 3px 65px 3px;transform:translateZ(-38px);box-shadow:0 0 0 10px #9effa805}
+    .glass-plane{position:absolute;inset:0;border:1px solid #baffce40;border-radius:3px 3px 65px 3px;transform:translateZ(38px);background:linear-gradient(135deg,#ddffe909,transparent 35%);pointer-events:none}
+    .profile-rig .profile-label{transform:translateZ(62px);pointer-events:none}
+    .profile-rig .float-label{animation:none;transform:translateZ(88px);background:#0b1710f5;box-shadow:0 14px 25px #0005}
+    .profile-rig .float-label.one{left:-32px;top:9%}.profile-rig .float-label.two{right:-20px;bottom:19%}
+    .orbit.one{inset:-8% -8%;animation:orbit-3d-a 22s linear infinite;transform:rotateX(28deg) rotateY(-30deg) rotateZ(-24deg)}
+    .orbit.two{inset:0 -17%;opacity:.65;animation:orbit-3d-b 28s linear infinite;transform:rotateX(64deg) rotateY(18deg) rotateZ(30deg)}
+    .cube-anchor{position:absolute;right:-4px;top:7%;width:54px;height:54px;perspective:500px;pointer-events:none}
+    .wire-cube{position:relative;width:100%;height:100%;transform-style:preserve-3d;transform:rotateX(-18deg) rotateY(25deg);animation:cube-spin 18s linear infinite}
+    .wire-cube i{position:absolute;inset:0;border:1px solid #9effa86b;background:#9effa809;backface-visibility:visible}
+    .wire-cube i:nth-child(1){transform:translateZ(27px)}.wire-cube i:nth-child(2){transform:rotateY(180deg) translateZ(27px)}.wire-cube i:nth-child(3){transform:rotateY(90deg) translateZ(27px)}.wire-cube i:nth-child(4){transform:rotateY(-90deg) translateZ(27px)}.wire-cube i:nth-child(5){transform:rotateX(90deg) translateZ(27px)}.wire-cube i:nth-child(6){transform:rotateX(-90deg) translateZ(27px)}
+    .depth-hint{position:absolute;bottom:-10px;right:24px;font-size:8px;color:#8eac96}
+    @keyframes portrait-drift{0%,100%{transform:rotateX(2deg) rotateY(-6deg)}50%{transform:rotateX(-2deg) rotateY(5deg)}}
+    @keyframes orbit-3d-a{to{transform:rotateX(28deg) rotateY(-30deg) rotateZ(336deg)}}
+    @keyframes orbit-3d-b{to{transform:rotateX(64deg) rotateY(18deg) rotateZ(390deg)}}
+    @keyframes cube-spin{to{transform:rotateX(342deg) rotateY(385deg)}}
+    @media(hover:hover) and (pointer:fine){.portrait-stage:hover .portrait-drift{animation-play-state:paused}}
+    @media(max-width:620px){.profile-rig .float-label{transform:translateZ(42px);font-size:7px}.profile-rig .float-label.one{left:-15px}.profile-rig .float-label.two{right:-8px}.profile-rig .profile-label{transform:translateZ(34px)}.cube-anchor{right:9px;top:3%;transform:scale(.7)}.orbit.one{inset:-1% 1%}.orbit.two{inset:12% -4%}.depth-hint{display:none}.glass-plane{transform:translateZ(25px)}}
+    @media(hover:none){.depth-hint{display:none}}
+    html[data-motion="off"] .profile-rig,html[data-motion="off"] .portrait-drift{transform:none!important}
   </style>
 </head>
 <body>
@@ -103,12 +130,19 @@
           <div class="portrait-stage" data-reveal style="--delay:180ms">
             <div class="orbit one" aria-hidden="true"></div><div class="orbit two" aria-hidden="true"></div>
             <span class="portrait-index" aria-hidden="true">PROFILE / PS—01</span>
-            <div class="portrait-float"><div class="profile-card" id="profileCard">
-              <img src="pic1111.jpg" alt="Portrait of Parakh Shinde" width="1031" height="1024" fetchpriority="high" decoding="async">
-              <div class="scan" aria-hidden="true"></div>
+            <div class="portrait-float"><div class="portrait-drift"><div class="profile-rig" id="profileCard">
+              <div class="depth-plate" aria-hidden="true"></div>
+              <div class="profile-card">
+                <img src="pic1111.jpg" alt="Portrait of Parakh Shinde" width="1031" height="1024" fetchpriority="high" decoding="async">
+                <div class="scan" aria-hidden="true"></div>
+              </div>
+              <div class="glass-plane" aria-hidden="true"></div>
               <div class="profile-label" aria-hidden="true"><div><span class="mono">Curiosity → Code → Evidence</span><strong>Security in practice.</strong></div><span class="plus">+</span></div>
-            </div></div>
-            <span class="float-label one" aria-hidden="true">AI SECURITY / RED TEAM LABS</span><span class="float-label two" aria-hidden="true">CLOUD / IAM / DETECTION</span>
+              <span class="float-label one" aria-hidden="true">AI SECURITY / RED TEAM LABS</span>
+              <span class="float-label two" aria-hidden="true">CLOUD / IAM / DETECTION</span>
+            </div></div></div>
+            <div class="cube-anchor" aria-hidden="true"><div class="wire-cube"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <span class="depth-hint mono" aria-hidden="true">MOVE POINTER TO EXPLORE ↗</span>
           </div>
         </div>
         <div class="hero-footer" data-reveal style="--delay:320ms">
@@ -285,8 +319,8 @@
         const rect = profile.getBoundingClientRect();
         const x = Math.max(0,Math.min(1,(pointer.x-rect.left)/rect.width));
         const y = Math.max(0,Math.min(1,(pointer.y-rect.top)/rect.height));
-        profile.style.setProperty('--rx', ((.5-y)*6).toFixed(2)+'deg');
-        profile.style.setProperty('--ry', ((x-.5)*8).toFixed(2)+'deg');
+        profile.style.setProperty('--rx', ((.5-y)*10).toFixed(2)+'deg');
+        profile.style.setProperty('--ry', ((x-.5)*15).toFixed(2)+'deg');
         profile.style.setProperty('--px', (x*100)+'%'); profile.style.setProperty('--py', (y*100)+'%');
       });
     });

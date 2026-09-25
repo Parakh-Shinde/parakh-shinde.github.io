@@ -1,6 +1,6 @@
 # Parakh Shinde — Security Engineering Portfolio
 
-An animated, responsive portfolio for GitHub Pages. Open `index.html` directly or serve this directory with any static HTTP server. No build step is required.
+A 3D animated, responsive portfolio for GitHub Pages. Open `index.html` directly or serve this directory with any static HTTP server. No build step is required.
 
 ## Files
 
@@ -10,7 +10,8 @@ An animated, responsive portfolio for GitHub Pages. Open `index.html` directly o
 
 ## Motion and interactions
 
-- Gently floating portrait with pointer-based tilt and a moving highlight on supported devices
+- Layered CSS 3D portrait with a back plate, glass plane and floating labels
+- Pointer-driven 3D tilt, gentle idle rotation, dimensional orbital rings and a rotating wireframe cube
 - Subtle orbital graphics, animated lab trace and scrolling topic strip
 - Staggered section reveals, smooth anchor scrolling and hover effects
 - Responsive navigation with keyboard access, Escape handling and active section indication
