@@ -1,15 +1,15 @@
-PARAKH SHINDE — CINEMATIC CYBERSECURITY PORTFOLIO
+PARAKH SHINDE — SECURITY ENGINEERING PORTFOLIO
 
-Files expected beside index.html:
-- Parakh-Shinde--Resume.pdf
-- pic1111.jpg
+Keep pic1111.jpg beside index.html.
 
-Open index.html in a browser, or serve this folder with a local web server.
+Open index.html in a browser, or run:
+python -m http.server 8000
 
-Libraries loaded by CDN:
-- GSAP
-- ScrollTrigger
-- Lenis
+The portfolio uses native CSS and JavaScript animations with no build step.
+Use the Motion on/off control to pause effects. The page respects reduced-motion
+settings by default and remains readable when JavaScript is disabled.
 
-Replace the placeholder image and resume file with your actual files.
-Update LinkedIn/GitHub URLs in index.html if needed.
+See README.md for the feature list and GitHub Pages setup.
+
+The legacy resume PDF is not linked. Upload a verified current resume before
+restoring a resume link in index.html.
