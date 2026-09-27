@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-motion="off">
+<html lang="en" data-motion="on">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -92,8 +92,9 @@
     .cine-chip.one{left:9%;top:34%}.cine-chip.two{right:9%;top:38%;animation-delay:1.95s}.cine-chip.three{left:13%;bottom:22%;animation-delay:2.15s}.cine-chip.four{right:12%;bottom:21%;animation-delay:2.3s}
     .cine-dots{position:absolute;right:8%;bottom:11%;width:185px;height:100px;background-image:radial-gradient(#9effa855 1.2px,transparent 1.2px);background-size:14px 14px;opacity:.75;z-index:1;animation:cine-rise 1.4s 1.2s both}
     .cine-enter{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);z-index:5;display:inline-flex;align-items:center;gap:16px;border:1px solid #9effa866;background:#0b1710e8;color:var(--green);padding:13px 18px;font:700 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;box-shadow:0 18px 55px #0008}
-    .cine-enter:hover{background:#142419}.cine-enter span{font-size:18px}
+    .cine-enter:hover,.intro-replay:hover{background:#142419}.cine-enter span{font-size:18px}
     .cine-skip-note{position:absolute;left:24px;bottom:24px;z-index:5;color:#7f9385;font:400 9px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    .intro-replay{position:fixed;right:20px;bottom:20px;z-index:65;border:1px solid #4c6f53;background:#07110bd9;color:#bdf8c4;padding:10px 13px;font:700 9px var(--mono);letter-spacing:.12em;text-transform:uppercase;box-shadow:0 18px 50px #0006}
     @keyframes cine-word{0%{opacity:0;letter-spacing:.22em;filter:blur(18px)}65%{opacity:.12;filter:blur(0)}100%{opacity:.09;letter-spacing:-.07em}}
     @keyframes cine-walk{0%{transform:translateX(-135%) scale(.58);opacity:0;filter:blur(4px)}52%{opacity:1}100%{transform:translateX(-50%) scale(.82);opacity:1;filter:blur(0)}}
     @keyframes cine-pop{0%{opacity:0;transform:translateY(16px) scale(.96)}100%{opacity:1;transform:translateY(0) scale(1)}}
@@ -168,6 +169,7 @@
     <button class="cine-enter" id="cineEnter" type="button">Enter Portfolio <span aria-hidden="true">↗</span></button>
     <p class="cine-skip-note">Cinematic intro · press Enter or click</p>
   </section>
+  <button class="intro-replay" id="introReplay" type="button">Replay Intro</button>
 
   <aside class="guide" id="portfolioGuide" aria-label="Portfolio voice guide">
     <div class="guide-character" aria-hidden="true">
@@ -241,7 +243,6 @@
       <div class="about-grid">
         <h2 class="section-heading" id="about-title" data-reveal>Security through<br><em>evidence.</em></h2>
         <div class="about-copy" data-reveal style="--delay:100ms"><p>I’m an early-career security engineering candidate focused on <strong>AI Security, API Security, Detection Engineering and adversary-informed defense.</strong></p><p>My projects turn security questions into tools, controlled experiments and documented findings. I focus on clean code, CI, telemetry, reproducible evidence and clear evaluation boundaries.</p><p>My part-time technical support background includes Windows and Linux systems.</p><div class="about-tags"><span class="tag">AI SECURITY</span><span class="tag">API SECURITY</span><span class="tag">DETECTION ENGINEERING</span></div></div></div>
-      </div>
       <div class="stats" data-reveal>
         <div class="stat"><b>1</b><span>Hero AI/API lab<small>AegisForge</small></span></div>
         <div class="stat"><b>10</b><span>AWS lab SPL rules<small>Custom detections</small></span></div>
@@ -290,14 +291,20 @@
 
     const cinematicIntro = document.getElementById('cinematicIntro');
     const cineEnter = document.getElementById('cineEnter');
+    const introReplay = document.getElementById('introReplay');
     function closeCinematicIntro() {
       cinematicIntro.classList.add('hidden');
       try { sessionStorage.setItem('ps-cinematic-seen', '1'); } catch (_) {}
+    }
+    function showCinematicIntro() {
+      cinematicIntro.classList.remove('hidden');
+      try { sessionStorage.removeItem('ps-cinematic-seen'); } catch (_) {}
     }
     try {
       if (sessionStorage.getItem('ps-cinematic-seen') === '1') cinematicIntro.classList.add('hidden');
     } catch (_) {}
     cineEnter.addEventListener('click', closeCinematicIntro);
+    introReplay.addEventListener('click', showCinematicIntro);
     document.addEventListener('keydown', event => {
       if ((event.key === 'Enter' || event.key === 'Escape') && !cinematicIntro.classList.contains('hidden')) closeCinematicIntro();
     });
