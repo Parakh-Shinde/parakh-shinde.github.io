@@ -64,6 +64,31 @@
     .featured{grid-column:1/-1;display:grid;grid-template-columns:1.05fr 1fr;gap:54px;padding:42px;background:linear-gradient(115deg,#142219,#0b1410)}.featured h3{font-size:58px}.featured .project-top{margin-bottom:24px}.featured-copy{display:flex;flex-direction:column}.featured .project-link{margin-top:4px}.feature-note{font:400 10px/1.7 var(--mono);color:#9eb4a4;margin-top:18px}
     .trace{position:relative;align-self:center;padding:30px 26px;border:1px solid #36573d;border-radius:4px;background:#08100cc9;overflow:hidden}.trace::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#60826950 .6px,transparent .6px);background-size:13px 13px;opacity:.3;pointer-events:none}.trace-title{display:flex;justify-content:space-between;color:#9ab4a1;padding-bottom:22px;border-bottom:1px solid #304a35}.trace-list{position:relative;padding-top:23px}.trace-list::before{content:"";position:absolute;left:13px;top:39px;bottom:26px;width:1px;background:#405b47}.trace-step{position:relative;display:flex;gap:18px;align-items:center;margin-bottom:23px;color:#9fb5a5}.trace-step:last-child{margin-bottom:0}.trace-step b{font:400 9px var(--mono);display:grid;place-items:center;background:#0c1b11;border:1px solid #4a7052;width:28px;height:28px;border-radius:50%;z-index:1;color:var(--green);animation:node-glow 8s ease-in-out infinite}.trace-step:nth-child(2) b{animation-delay:2s}.trace-step:nth-child(3) b{animation-delay:4s}.trace-step:nth-child(4) b{animation-delay:6s}.trace-step span{font:400 11px var(--mono)}.trace-step small{display:block;font:400 9px var(--mono);color:#738c7b;margin-top:5px}.trace-footer{margin-top:27px;padding-top:16px;border-top:1px solid #304a35;color:#92b49b}
     .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:42px}.skill{background:var(--bg);padding:30px 24px}.skill .mono{color:var(--green);margin-bottom:18px}.skill ul{color:var(--muted);font-size:13px;line-height:2.2}.skill-mark{font:400 28px var(--mono);color:#66806d;margin-bottom:25px}
+
+    .video-portfolio{position:relative;border-top:1px solid var(--line);background:radial-gradient(circle at 78% 16%,#18422055,transparent 28%),linear-gradient(180deg,#07100b,#0c130f 62%,var(--bg));overflow:hidden}
+    .video-portfolio::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#9effa80a 1px,transparent 1px),linear-gradient(90deg,#9effa80a 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(180deg,#000,transparent 85%);pointer-events:none}
+    .video-reel{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:stretch}
+    .video-stage{position:relative;min-height:460px;border:1px solid #35513a;background:#050806;overflow:hidden;box-shadow:0 28px 90px #0007}
+    .video-stage::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,#9effa81c,transparent 36%),linear-gradient(90deg,#000 0 7%,transparent 24% 76%,#000 93% 100%);z-index:1;pointer-events:none}
+    .video-stage::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#ffffff05 0 1px,transparent 1px 5px);z-index:4;pointer-events:none}
+    .video-frame{position:absolute;inset:0;display:grid;place-items:center;padding:34px;opacity:0;transform:scale(1.04);transition:opacity .6s var(--ease),transform .8s var(--ease)}
+    .video-frame.active{opacity:1;transform:scale(1)}
+    .video-frame img{position:absolute;inset:auto 10% 9% auto;width:min(235px,36%);aspect-ratio:1;object-fit:cover;border-radius:50%;border:1px solid #77a97f;filter:saturate(.7) contrast(1.08) brightness(.76);box-shadow:0 20px 80px #000}
+    .video-word{position:absolute;left:7%;top:14%;font:700 clamp(4.5rem,10vw,8.8rem)/.86 var(--display);letter-spacing:-.06em;color:#eaffee12;text-transform:uppercase}
+    .video-copy{position:relative;z-index:3;max-width:480px;justify-self:start;align-self:end;padding-bottom:22px}
+    .video-kicker{color:var(--green);font:700 10px var(--mono);letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+    .video-copy h3{font:600 clamp(2.5rem,4vw,4.1rem)/1 var(--display);letter-spacing:-.03em;margin-bottom:15px}
+    .video-copy p{color:#c1cec5;font-size:15px;line-height:1.8;max-width:440px}
+    .video-hud{position:absolute;left:24px;right:24px;top:22px;z-index:5;display:flex;justify-content:space-between;color:#91a898}
+    .video-bars{display:flex;gap:4px;align-items:center}.video-bars i{display:block;width:5px;height:18px;background:#9effa84f;animation:equalize 1.1s ease-in-out infinite}.video-bars i:nth-child(2){height:27px;animation-delay:.15s}.video-bars i:nth-child(3){height:13px;animation-delay:.3s}
+    .video-panel{border:1px solid var(--line);background:#0b1410;padding:28px;display:flex;flex-direction:column;gap:20px}
+    .video-panel p{color:var(--muted);font-size:14px;line-height:1.8}.video-panel strong{color:var(--ink);font-weight:600}
+    .video-controls{display:flex;gap:12px;flex-wrap:wrap}.video-control{border:1px solid #4c6f53;background:#0f1c13;color:#c7ffd0;padding:12px 14px;font:700 9px var(--mono);letter-spacing:.12em;text-transform:uppercase}.video-control:hover{background:#182a1d}
+    .scene-list{display:grid;gap:10px}.scene-button{width:100%;text-align:left;border:1px solid #263d2b;background:#07100b;color:#aebcb2;padding:13px 14px;font:400 10px var(--mono);letter-spacing:.08em;text-transform:uppercase}.scene-button.active{border-color:#9effa899;color:var(--green);background:#132017}
+    .video-script{border-top:1px solid var(--line);padding-top:18px;color:#9dac9f;font:400 11px/1.8 var(--mono)}
+    @keyframes equalize{50%{transform:scaleY(.45);opacity:.55}}
+    @media(max-width:900px){.video-reel{grid-template-columns:1fr}.video-stage{min-height:430px}.video-frame img{width:190px;right:8%;bottom:8%}}
+    @media(max-width:620px){.video-stage{min-height:520px}.video-copy{align-self:start;padding-top:90px}.video-frame img{width:160px;right:auto;left:50%;transform:translateX(-50%);bottom:34px}.video-word{font-size:22vw;left:4%;top:20px}.video-controls{display:grid}.video-control{width:100%}}
     .contact{position:relative;background:#101a13;border-top:1px solid #2d4433;overflow:hidden}.contact::after{content:"PS";position:absolute;right:4%;top:35px;font:600 330px/1 var(--display);color:#9effa805;pointer-events:none}.contact-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:80px;position:relative;z-index:1}.contact .section-heading{font-size:clamp(3.4rem,5.8vw,5.6rem)}.contact-copy{margin-top:24px;font-size:14px;color:var(--muted);max-width:370px}.email{display:inline-flex;align-items:center;gap:18px;margin-top:30px;font:400 clamp(14px,1.6vw,20px)/1.6 var(--mono);padding-bottom:10px;border-bottom:1px solid #506d56;overflow-wrap:anywhere}.email:hover{color:var(--green)}.contact-side{padding-top:8px}.contact-block+.contact-block{margin-top:28px}.contact-block .mono{color:var(--green);margin-bottom:10px}.contact-block p{font-size:13px;color:var(--muted);line-height:1.8}.socials{display:flex;gap:25px;margin-top:28px}.socials a{font:400 10px var(--mono);padding:10px 0}.socials a:hover{color:var(--green)}
     footer{border-top:1px solid #2d4433;padding:26px 0;background:#101a13}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#99aa9d}.back-top:hover{color:var(--green)}
     [data-reveal]{opacity:1;transform:none}.reveal-ready [data-reveal]:not(.visible){opacity:0;transform:translateY(26px)}.reveal-ready [data-reveal]{transition:opacity .75s var(--ease),transform .75s var(--ease);transition-delay:var(--delay,0ms)}
@@ -190,7 +215,7 @@
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="Parakh Shinde home"><span class="brand-mark">PS</span><span class="brand-name">PARAKH<br>SHINDE</span></a>
       <nav class="nav-links" id="navigation" aria-label="Main navigation">
-        <a href="#about">Profile</a><a href="#projects">Projects</a><a href="#skills">Toolkit</a><a href="#contact">Contact</a>
+        <a href="#about">Profile</a><a href="#video">Video</a><a href="#projects">Projects</a><a href="#skills">Toolkit</a><a href="#contact">Contact</a>
       </nav>
       <div class="nav-actions">
         <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false" aria-label="Enable animations">Motion off</button>
@@ -249,8 +274,37 @@
         <div class="stat"><b>8</b><span>SOC lab SPL rules<small>Controlled simulations</small></span></div>
       </div>
     </div></section>
+
+    <section class="section video-portfolio" id="video" aria-labelledby="video-title"><div class="wrap">
+      <p class="section-label mono" data-reveal><span>02 /</span> VIDEO PORTFOLIO</p>
+      <div class="section-intro" data-reveal><h2 class="section-heading" id="video-title">A recruiter-ready<br><em>security intro.</em></h2><p>A short cinematic reel that explains who I am, what I build, and why AegisForge is my hero project.</p></div>
+      <div class="video-reel" data-reveal>
+        <div class="video-stage" aria-live="polite">
+          <div class="video-hud mono"><span id="videoTime">SCENE 01 / 04</span><span class="video-bars" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <article class="video-frame active" data-scene="0"><div class="video-word">INTRO</div><img src="pic1111.jpg" alt=""><div class="video-copy"><p class="video-kicker">Security Engineer Portfolio</p><h3>Hi, I’m Parakh Shinde.</h3><p>I’m focused on AI Security, API Security, Detection Engineering and adversary-informed defense, with a portfolio built around reproducible evidence.</p></div></article>
+          <article class="video-frame" data-scene="1"><div class="video-word">BUILD</div><img src="pic1111.jpg" alt=""><div class="video-copy"><p class="video-kicker">Hero Project</p><h3>AegisForge.</h3><p>A lab-safe AI/API security platform for prompt-injection detection, guardrail testing, authorization modeling, telemetry and benchmark validation.</p></div></article>
+          <article class="video-frame" data-scene="2"><div class="video-word">SIGNAL</div><img src="pic1111.jpg" alt=""><div class="video-copy"><p class="video-kicker">Security Engineering</p><h3>I think in evidence.</h3><p>My work connects offensive thinking with defensive validation: logs, detections, benchmark gates, CI, CodeQL, and documented limitations.</p></div></article>
+          <article class="video-frame" data-scene="3"><div class="video-word">READY</div><img src="pic1111.jpg" alt=""><div class="video-copy"><p class="video-kicker">Open To Roles</p><h3>Ready to contribute.</h3><p>I’m looking for entry-level Security Engineer roles or internships where I can build, investigate, automate and keep improving secure systems.</p></div></article>
+        </div>
+        <div class="video-panel">
+          <p><strong>Portfolio reel:</strong> click Play to watch the scenes, or Voice to hear the recruiter pitch. The voice uses your browser’s speech engine, so it starts only after a click.</p>
+          <div class="video-controls">
+            <button class="video-control" id="videoPlay" type="button">Play Reel</button>
+            <button class="video-control" id="videoVoice" type="button">Voice Pitch</button>
+            <button class="video-control" id="videoNext" type="button">Next Scene</button>
+          </div>
+          <div class="scene-list" id="sceneList">
+            <button class="scene-button active" type="button" data-scene-button="0">01 / Who I am</button>
+            <button class="scene-button" type="button" data-scene-button="1">02 / AegisForge</button>
+            <button class="scene-button" type="button" data-scene-button="2">03 / Evidence mindset</button>
+            <button class="scene-button" type="button" data-scene-button="3">04 / Role target</button>
+          </div>
+          <p class="video-script" id="videoScript">Hi, I’m Parakh Shinde, an early-career security engineering candidate focused on AI Security, API Security and Detection Engineering.</p>
+        </div>
+      </div>
+    </div></section>
     <section class="section projects" id="projects" aria-labelledby="projects-title"><div class="wrap">
-      <p class="section-label mono" data-reveal><span>02 /</span> SELECTED WORK</p>
+      <p class="section-label mono" data-reveal><span>03 /</span> SELECTED WORK</p>
       <div class="section-intro" data-reveal><h2 class="section-heading" id="projects-title">Built to show<br><em>security judgment.</em></h2><p>Selected projects with source code, reproducible evidence, engineering quality and documented limitations.</p></div>
       <div class="project-grid">
         <article class="project featured" data-reveal>
@@ -264,11 +318,11 @@
       </div>
     </div></section>
     <section class="section" id="skills" aria-labelledby="skills-title"><div class="wrap">
-      <p class="section-label mono" data-reveal><span>03 /</span> THE TOOLKIT</p><h2 class="section-heading" id="skills-title" data-reveal>Tools behind<br><em>the work.</em></h2>
+      <p class="section-label mono" data-reveal><span>04 /</span> THE TOOLKIT</p><h2 class="section-heading" id="skills-title" data-reveal>Tools behind<br><em>the work.</em></h2>
       <div class="skills-grid" data-reveal><div class="skill"><div class="skill-mark" aria-hidden="true">01_</div><h3 class="mono">AI &amp; API SECURITY</h3><ul><li>Prompt injection labs</li><li>API authorization testing</li><li>garak / Ollama</li><li>Python evaluation harnesses</li></ul></div><div class="skill"><div class="skill-mark" aria-hidden="true">02_</div><h3 class="mono">API &amp; CLOUD SECURITY</h3><ul><li>API authorization testing</li><li>AWS CloudTrail / WAF</li><li>VPC Flow Logs</li><li>Terraform</li></ul></div><div class="skill"><div class="skill-mark" aria-hidden="true">03_</div><h3 class="mono">DETECTION</h3><ul><li>Splunk SPL</li><li>MITRE ATT&amp;CK</li><li>Alert validation</li><li>Controlled simulations</li></ul></div><div class="skill"><div class="skill-mark" aria-hidden="true">04_</div><h3 class="mono">SYSTEMS &amp; SIGNALS</h3><ul><li>Windows / Sysmon</li><li>Linux logs</li><li>Suricata</li><li>Python automation</li></ul></div></div>
     </div></section>
     <section class="section contact" id="contact" aria-labelledby="contact-title"><div class="wrap">
-      <p class="section-label mono" data-reveal><span>04 /</span> OPEN CHANNEL</p>
+      <p class="section-label mono" data-reveal><span>05 /</span> OPEN CHANNEL</p>
       <div class="contact-grid"><div data-reveal><h2 class="section-heading" id="contact-title">LET’S BUILD<br><em>SAFER SYSTEMS.</em></h2><p class="contact-copy">Looking for an entry-level Security Engineer role or internship where I can contribute to AI Security, API Security, Detection Engineering and security automation.</p><a class="email" href="mailto:parakhshinde15@gmail.com">parakhshinde15@gmail.com <span aria-hidden="true">↗</span></a><div class="socials"><a href="https://www.linkedin.com/in/parakh-shinde/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href="https://github.com/Parakh-Shinde" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></div></div><div class="contact-side" data-reveal style="--delay:100ms"><div class="contact-block"><h3 class="mono">EDUCATION</h3><p>SRMIST — MCA, Cyber Security &amp; Cyber Forensics<br>Expected June 2028</p><p>RNTU — BCA · 2025</p></div><div class="contact-block"><h3 class="mono">CURRENT TRAINING</h3><p>Advanced Cybersecurity Program (AccioJob)<br>In progress</p></div><div class="contact-block"><h3 class="mono">LOCATION</h3><p>Bengaluru, India<br>Open to onsite opportunities across India.</p></div></div></div>
     </div></section>
   </main>
@@ -308,6 +362,55 @@
     document.addEventListener('keydown', event => {
       if ((event.key === 'Enter' || event.key === 'Escape') && !cinematicIntro.classList.contains('hidden')) closeCinematicIntro();
     });
+
+
+    const videoFrames = [...document.querySelectorAll('.video-frame')];
+    const sceneButtons = [...document.querySelectorAll('[data-scene-button]')];
+    const videoPlay = document.getElementById('videoPlay');
+    const videoVoice = document.getElementById('videoVoice');
+    const videoNext = document.getElementById('videoNext');
+    const videoTime = document.getElementById('videoTime');
+    const videoScript = document.getElementById('videoScript');
+    const videoLines = [
+      'Hi, I’m Parakh Shinde, an early-career security engineering candidate focused on AI Security, API Security and Detection Engineering.',
+      'My hero project is AegisForge, a lab-safe AI and API security platform with prompt injection detection, authorization modeling, telemetry and benchmark gates.',
+      'I build with a security engineering mindset: controlled experiments, clean code, logs, detections, CI, CodeQL and documented limitations.',
+      'I am looking for entry-level Security Engineer roles or internships where I can build, investigate, automate and keep improving secure systems.'
+    ];
+    let videoIndex = 0;
+    let videoTimer = 0;
+    function setVideoScene(index) {
+      videoIndex = (index + videoFrames.length) % videoFrames.length;
+      videoFrames.forEach((frame, frameIndex) => frame.classList.toggle('active', frameIndex === videoIndex));
+      sceneButtons.forEach((button, buttonIndex) => button.classList.toggle('active', buttonIndex === videoIndex));
+      videoTime.textContent = 'SCENE ' + String(videoIndex + 1).padStart(2, '0') + ' / 04';
+      videoScript.textContent = videoLines[videoIndex];
+    }
+    function playVideoReel() {
+      window.clearInterval(videoTimer);
+      setVideoScene(0);
+      videoTimer = window.setInterval(() => {
+        setVideoScene(videoIndex + 1);
+        if (videoIndex === videoFrames.length - 1) window.clearInterval(videoTimer);
+      }, 3300);
+    }
+    function speakVideoPitch() {
+      if (!('speechSynthesis' in window)) {
+        videoScript.textContent = 'Voice is not supported in this browser, but the full video pitch is written here.';
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(videoLines.join(' '));
+      utterance.rate = 0.9;
+      utterance.pitch = 1;
+      utterance.volume = 0.92;
+      window.speechSynthesis.speak(utterance);
+      playVideoReel();
+    }
+    videoPlay.addEventListener('click', playVideoReel);
+    videoVoice.addEventListener('click', speakVideoPitch);
+    videoNext.addEventListener('click', () => setVideoScene(videoIndex + 1));
+    sceneButtons.forEach(button => button.addEventListener('click', () => setVideoScene(Number(button.dataset.sceneButton))));
 
     const guide = document.getElementById('portfolioGuide');
     const guideText = document.getElementById('guideText');
