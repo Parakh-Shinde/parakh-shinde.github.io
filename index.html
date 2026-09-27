@@ -37,6 +37,11 @@
     .nav-actions{display:flex;gap:14px;align-items:center}.motion-toggle{display:none;background:transparent;border:1px solid var(--line);border-radius:100px;padding:9px 12px;font:400 9px var(--mono);white-space:nowrap;color:var(--muted)}.motion-toggle[aria-pressed="true"]{color:var(--green)}.menu-toggle{display:none;background:transparent;padding:10px;font:400 11px var(--mono)}
     .hero{position:relative;isolation:isolate;padding:160px 0 52px;min-height:min(930px,100svh);overflow:hidden}.hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(#23372b33 1px,transparent 1px),linear-gradient(90deg,#23372b33 1px,transparent 1px);background-size:78px 78px;mask-image:linear-gradient(90deg,transparent 20%,#000)}
     .aura{position:absolute;z-index:-1;top:4%;right:-15%;width:75%;height:90%;background:radial-gradient(ellipse,#2d6b422e,transparent 64%);filter:blur(35px);animation:aurora 16s ease-in-out infinite alternate;pointer-events:none}
+    .cyber-depth{position:absolute;inset:110px 5% auto auto;width:min(42vw,520px);height:420px;z-index:-1;perspective:900px;pointer-events:none;opacity:.9}
+    .cyber-depth span{position:absolute;display:block;border:1px solid #9effa81f;background:linear-gradient(135deg,#9effa80d,transparent);box-shadow:0 0 35px #9effa80b;transform-style:preserve-3d}
+    .cyber-depth span:nth-child(1){inset:18% 8% auto auto;width:250px;height:155px;transform:rotateX(58deg) rotateZ(-28deg) translateZ(-30px);animation:depth-card-a 12s ease-in-out infinite}
+    .cyber-depth span:nth-child(2){inset:48% auto auto 10%;width:210px;height:120px;transform:rotateX(62deg) rotateZ(18deg) translateZ(-70px);animation:depth-card-b 15s ease-in-out infinite}
+    .cyber-depth span:nth-child(3){inset:auto 12% 5% auto;width:160px;height:160px;border-radius:50%;transform:rotateX(70deg) rotateZ(0deg) translateZ(-90px);animation:depth-ring 18s linear infinite}
     .hero-layout{display:grid;grid-template-columns:1.15fr 1fr;gap:65px;align-items:center}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--green);margin-bottom:32px}.eyebrow::before{content:"";width:22px;height:1px;background:var(--green)}
     h1{font:600 clamp(5.2rem,8.7vw,8.2rem)/.94 var(--display);letter-spacing:-.045em}.name-line{display:block}.name-line:last-child{color:var(--green)}
     .hero-description{font-size:17px;line-height:1.7;max-width:415px;color:var(--muted);margin-top:30px}.hero-description strong{color:var(--ink);font-weight:500}
@@ -62,7 +67,7 @@
     .contact{position:relative;background:#101a13;border-top:1px solid #2d4433;overflow:hidden}.contact::after{content:"PS";position:absolute;right:4%;top:35px;font:600 330px/1 var(--display);color:#9effa805;pointer-events:none}.contact-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:80px;position:relative;z-index:1}.contact .section-heading{font-size:clamp(3.4rem,5.8vw,5.6rem)}.contact-copy{margin-top:24px;font-size:14px;color:var(--muted);max-width:370px}.email{display:inline-flex;align-items:center;gap:18px;margin-top:30px;font:400 clamp(14px,1.6vw,20px)/1.6 var(--mono);padding-bottom:10px;border-bottom:1px solid #506d56;overflow-wrap:anywhere}.email:hover{color:var(--green)}.contact-side{padding-top:8px}.contact-block+.contact-block{margin-top:28px}.contact-block .mono{color:var(--green);margin-bottom:10px}.contact-block p{font-size:13px;color:var(--muted);line-height:1.8}.socials{display:flex;gap:25px;margin-top:28px}.socials a{font:400 10px var(--mono);padding:10px 0}.socials a:hover{color:var(--green)}
     footer{border-top:1px solid #2d4433;padding:26px 0;background:#101a13}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#99aa9d}.back-top:hover{color:var(--green)}
     [data-reveal]{opacity:1;transform:none}.reveal-ready [data-reveal]:not(.visible){opacity:0;transform:translateY(26px)}.reveal-ready [data-reveal]{transition:opacity .75s var(--ease),transform .75s var(--ease);transition-delay:var(--delay,0ms)}
-    @keyframes float{50%{transform:translateY(-9px)}}@keyframes orbit{to{transform:rotate(336deg)}}@keyframes aurora{to{transform:translate(-10%,12%) scale(1.2)}}@keyframes scan{0%,12%{transform:translateY(0);opacity:0}20%,72%{opacity:.65}88%,100%{transform:translateY(550px);opacity:0}}@keyframes pulse{50%{box-shadow:0 0 0 7px #9effa814}}@keyframes scroll-cue{to{transform:translateY(9px);opacity:0}}@keyframes marquee{to{transform:translateX(-50%)}}@keyframes node-glow{0%,24%,100%{box-shadow:0 0 0 transparent;background:#0c1b11}8%,16%{box-shadow:0 0 17px #9effa835;background:#25422c;color:#e0ffe4}}
+    @keyframes float{50%{transform:translateY(-9px)}}@keyframes orbit{to{transform:rotate(336deg)}}@keyframes aurora{to{transform:translate(-10%,12%) scale(1.2)}}@keyframes depth-card-a{50%{transform:rotateX(58deg) rotateZ(-20deg) translate3d(-16px,-20px,25px)}}@keyframes depth-card-b{50%{transform:rotateX(62deg) rotateZ(10deg) translate3d(18px,-12px,30px)}}@keyframes depth-ring{to{transform:rotateX(70deg) rotateZ(360deg) translateZ(-90px)}}@keyframes scan{0%,12%{transform:translateY(0);opacity:0}20%,72%{opacity:.65}88%,100%{transform:translateY(550px);opacity:0}}@keyframes pulse{50%{box-shadow:0 0 0 7px #9effa814}}@keyframes scroll-cue{to{transform:translateY(9px);opacity:0}}@keyframes marquee{to{transform:translateX(-50%)}}@keyframes node-glow{0%,24%,100%{box-shadow:0 0 0 transparent;background:#0c1b11}8%,16%{box-shadow:0 0 17px #9effa835;background:#25422c;color:#e0ffe4}}
     @media(hover:hover) and (pointer:fine){.project:hover{transform:translateY(-4px)}}
     @media(min-width:900px){.hero-copy{padding-bottom:12px}}
     @media(max-width:1100px){.wrap{width:calc(100% - 64px)}.hero-layout{gap:28px}.hero{padding-top:145px}.brand-name{display:none}.about-grid{gap:45px}.featured{gap:30px;padding:32px}.contact-grid{gap:40px}.hero-description{font-size:15px}}
@@ -95,9 +100,10 @@
     @keyframes orbit-3d-b{to{transform:rotateX(64deg) rotateY(18deg) rotateZ(390deg)}}
     @keyframes cube-spin{to{transform:rotateX(342deg) rotateY(385deg)}}
     @media(hover:hover) and (pointer:fine){.portrait-stage:hover .portrait-drift{animation-play-state:paused}}
-    @media(max-width:620px){.profile-rig .float-label{transform:translateZ(42px);font-size:7px}.profile-rig .float-label.one{left:-15px}.profile-rig .float-label.two{right:-8px}.profile-rig .profile-label{transform:translateZ(34px)}.cube-anchor{right:9px;top:3%;transform:scale(.7)}.orbit.one{inset:-1% 1%}.orbit.two{inset:12% -4%}.depth-hint{display:none}.glass-plane{transform:translateZ(25px)}}
+    @media(max-width:620px){.profile-rig .float-label{transform:translateZ(42px);font-size:7px}.profile-rig .float-label.one{left:-15px}.profile-rig .float-label.two{right:-8px}.profile-rig .profile-label{transform:translateZ(34px)}.cube-anchor{right:9px;top:3%;transform:scale(.7)}.orbit.one{inset:-1% 1%}.orbit.two{inset:12% -4%}.depth-hint{display:none}.glass-plane{transform:translateZ(25px)}.cyber-depth{display:none}}
     @media(hover:none){.depth-hint{display:none}}
     html[data-motion="off"] .profile-rig,html[data-motion="off"] .portrait-drift{transform:none!important}
+    html[data-motion="off"] .cyber-depth span{transform:none!important}
   </style>
 </head>
 <body>
@@ -117,13 +123,13 @@
   </header>
   <main id="main" tabindex="-1">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="aura" aria-hidden="true"></div>
+      <div class="aura" aria-hidden="true"></div><div class="cyber-depth" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="wrap">
         <div class="hero-layout">
           <div class="hero-copy">
             <p class="eyebrow mono" data-reveal>Security engineer portfolio / AI + API security</p>
             <h1 id="hero-title" data-reveal style="--delay:80ms"><span class="name-line">PARAKH</span><span class="name-line">SHINDE.</span></h1>
-            <p class="hero-description" data-reveal style="--delay:160ms">Security Engineer focused on AI Security, API Security and Detection Engineering.<br><strong>Building lab-safe tools with reproducible evidence.</strong></p>
+            <p class="hero-description" data-reveal style="--delay:160ms">Security Engineer focused on AI Security, API Security and Detection Engineering.<br><strong>Explore a 3D animated portfolio backed by lab-safe evidence.</strong></p>
             <p class="role-line" data-reveal style="--delay:220ms"><span class="sr-only">AI security, API security, detection engineering and adversary-informed defense</span><span aria-hidden="true">focus / <span class="role-word" id="roleWord">AI security</span></span></p>
             <div class="actions" data-reveal style="--delay:260ms"><a class="btn" href="#projects">EXPLORE MY WORK <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="#contact">LET’S CONNECT ↗</a></div>
           </div>
