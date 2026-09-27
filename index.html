@@ -74,6 +74,32 @@
     @media(max-width:800px){.wrap{width:calc(100% - 40px)}.nav{height:74px}.nav-inner{gap:15px}.nav-links{gap:19px}.nav-links a{font-size:9px}.motion-toggle{font-size:8px;padding:8px}.hero{padding-top:118px}.hero-layout{grid-template-columns:1fr 1fr;gap:18px}h1{font-size:clamp(4rem,10.5vw,6rem)}.eyebrow{font-size:8px;margin-bottom:26px}.hero-description{font-size:14px}.role-line{font-size:9px}.actions{gap:17px}.btn{font-size:9px;gap:17px;padding:13px 17px}.portrait-stage{padding-inline:10px}.float-label{font-size:7px;padding:8px}.profile-label{inset:auto 16px 20px}.profile-label strong{font-size:21px}.profile-label .mono{font-size:7px}.hero-footer{margin-top:40px}.section{padding:82px 0}.about-grid{gap:30px}.stats{gap:14px}.stat{gap:11px}.stat b{font-size:47px}.stat span{font-size:9px}.project{padding:25px}.featured{gap:27px}.featured h3{font-size:45px}.trace{padding:25px 18px}.trace-step{gap:12px}.trace-step span{font-size:9px}.skills-grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr 1fr;gap:35px}.email{font-size:13px;gap:8px}}
     @media(max-width:620px){.wrap{width:calc(100% - 40px)}.brand-name{display:block;font-size:9px}.nav-actions{margin-left:auto;gap:7px}.nav-inner{flex-wrap:wrap;align-content:center;position:relative}.nav-links{order:3;display:flex;width:100%;justify-content:center;gap:25px;padding:3px 0 9px;background:var(--bg)}.nav{height:106px;background:var(--bg);border-color:var(--line)}.menu-enhanced .nav{height:74px}.menu-enhanced .menu-toggle{display:block}.menu-enhanced .nav-links{display:none;position:absolute;top:60px;left:-20px;right:-20px;width:auto;background:#0d1710;border-bottom:1px solid #426049;padding:22px;flex-direction:column;gap:4px;align-items:stretch}.menu-enhanced .nav-links.open{display:flex}.nav-links a{font-size:11px;padding:14px}.hero{padding:146px 0 36px;min-height:0}.menu-enhanced .hero{padding-top:116px}.hero-layout{grid-template-columns:1fr;gap:44px}.hero-copy{max-width:450px}.eyebrow{font-size:9px;margin-bottom:24px}h1{font-size:clamp(4.1rem,18vw,7rem)}.hero-description{font-size:15px;max-width:355px;margin-top:26px}.role-line{font-size:10px;margin-top:20px}.actions{margin-top:27px}.btn{min-height:49px;padding:14px 21px;font-size:10px}.portrait-stage{width:min(370px,100%);margin:0 auto;padding:18px 22px 24px}.orbit.one{inset:-1% 6%}.orbit.two{inset:12% 0}.float-label.one{left:0;top:15%}.float-label.two{right:0;bottom:20%}.float-label{font-size:8px}.profile-label strong{font-size:26px}.profile-label .mono{font-size:8px}.portrait-index{top:-2px}.hero-footer{margin-top:27px;gap:12px}.availability{font-size:8px}.hero-location{font-size:8px}.scroll-link .mono{display:none}.ticker{margin-top:0;padding:16px 0}.ticker span{font-size:10px}.section{padding:65px 0}.section-label{margin-bottom:22px;font-size:9px}.about-grid{grid-template-columns:1fr;gap:28px}.section-heading{font-size:2.9rem}.about-copy{font-size:14px}.stats{gap:18px;margin-top:32px;padding-top:26px}.stat{display:block}.stat b{font-size:44px}.stat span{display:block;margin-top:8px;font-size:8px}.stat small{font-size:8px}.section-intro{display:block;margin-bottom:28px}.section-intro>p{margin-top:20px;font-size:13px}.project-grid{grid-template-columns:1fr;gap:16px}.project{padding:26px}.featured{grid-column:auto;display:flex;gap:28px}.featured h3{font-size:45px}.project h3{font-size:31px}.project-top{margin-bottom:24px;font-size:9px}.project p{font-size:13px}.trace{width:100%;padding:24px}.trace-step span{font-size:10px}.featured .project-link{margin-top:0}.trace-footer{font-size:8px}.skills-grid{margin-top:30px}.skill{padding:24px 18px}.skill .mono{font-size:9px}.skill ul{font-size:12px}.contact-grid{grid-template-columns:1fr;gap:40px}.contact .section-heading{font-size:3.5rem}.email{font-size:clamp(11px,3.45vw,17px)}.contact-block p{font-size:12px}.footer-inner{font-size:8px}.contact::after{font-size:230px;top:40px;right:-5%}}
 
+
+    .cinematic{position:fixed;inset:0;z-index:120;display:grid;place-items:center;background:#000;overflow:hidden;color:#f7fff8;transition:opacity .9s var(--ease),visibility .9s var(--ease)}
+    .cinematic.hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .cinematic::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 58%,#16451f44,transparent 42%),linear-gradient(90deg,#000 0 8%,transparent 26% 74%,#000 92% 100%);z-index:1}
+    .cinematic::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#ffffff06 0 1px,transparent 1px 4px);mix-blend-mode:screen;opacity:.22;z-index:4;pointer-events:none}
+    .cine-stage{position:relative;width:100%;height:100%;isolation:isolate;background:radial-gradient(ellipse at 50% 75%,#102313 0,#020403 54%,#000 100%)}
+    .cine-grid{position:absolute;inset:0;background-image:linear-gradient(#9effa812 1px,transparent 1px),linear-gradient(90deg,#9effa812 1px,transparent 1px);background-size:80px 80px;transform:perspective(700px) rotateX(62deg) translateY(26%);transform-origin:50% 100%;opacity:.28;mask-image:linear-gradient(0deg,#000,transparent 72%);z-index:0}
+    .cine-word{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);font:700 clamp(5rem,18vw,16rem)/.82 var(--display);letter-spacing:-.07em;color:#eaffee;opacity:.09;text-shadow:0 0 55px #9effa826;white-space:nowrap;z-index:1;animation:cine-word 2.7s var(--ease) both}
+    .cine-role{position:absolute;left:50%;top:18%;transform:translateX(-50%);z-index:3;text-align:center;color:#a5b9aa;font:400 10px var(--mono);letter-spacing:.24em;text-transform:uppercase;animation:cine-rise 1.5s .9s var(--ease) both}
+    .cine-role b{display:block;margin-top:10px;color:var(--green);font:700 clamp(1.05rem,2vw,1.55rem) var(--mono);letter-spacing:.12em}
+    .cine-subject{position:absolute;left:50%;bottom:10%;width:min(25vw,245px);aspect-ratio:1;z-index:3;transform:translateX(-50%) scale(.82);animation:cine-walk 2.8s var(--ease) both}
+    .cine-subject::before{content:"";position:absolute;inset:-14%;border:1px solid #9effa82b;border-radius:50%;animation:cine-orbit 8s linear infinite}
+    .cine-subject img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:1px solid #85c58e;filter:saturate(.7) contrast(1.1) brightness(.75);box-shadow:0 0 75px #9effa81f,0 30px 80px #000}
+    .cine-subject::after{content:"";position:absolute;inset:auto 14% -12px;height:25px;background:#000;border-radius:50%;filter:blur(10px);opacity:.8}
+    .cine-chip{position:absolute;z-index:3;border:1px solid #55745b;background:#07110bed;color:#cce7d2;padding:10px 14px;font:700 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;box-shadow:0 16px 45px #0007;animation:cine-pop 1s 1.7s var(--ease) both}
+    .cine-chip.one{left:9%;top:34%}.cine-chip.two{right:9%;top:38%;animation-delay:1.95s}.cine-chip.three{left:13%;bottom:22%;animation-delay:2.15s}.cine-chip.four{right:12%;bottom:21%;animation-delay:2.3s}
+    .cine-dots{position:absolute;right:8%;bottom:11%;width:185px;height:100px;background-image:radial-gradient(#9effa855 1.2px,transparent 1.2px);background-size:14px 14px;opacity:.75;z-index:1;animation:cine-rise 1.4s 1.2s both}
+    .cine-enter{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);z-index:5;display:inline-flex;align-items:center;gap:16px;border:1px solid #9effa866;background:#0b1710e8;color:var(--green);padding:13px 18px;font:700 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;box-shadow:0 18px 55px #0008}
+    .cine-enter:hover{background:#142419}.cine-enter span{font-size:18px}
+    .cine-skip-note{position:absolute;left:24px;bottom:24px;z-index:5;color:#7f9385;font:400 9px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    @keyframes cine-word{0%{opacity:0;letter-spacing:.22em;filter:blur(18px)}65%{opacity:.12;filter:blur(0)}100%{opacity:.09;letter-spacing:-.07em}}
+    @keyframes cine-walk{0%{transform:translateX(-135%) scale(.58);opacity:0;filter:blur(4px)}52%{opacity:1}100%{transform:translateX(-50%) scale(.82);opacity:1;filter:blur(0)}}
+    @keyframes cine-pop{0%{opacity:0;transform:translateY(16px) scale(.96)}100%{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes cine-rise{0%{opacity:0;transform:translate(-50%,16px)}100%{opacity:1;transform:translate(-50%,0)}}@keyframes cine-orbit{to{transform:rotate(360deg)}}
+    @media(max-width:760px){.cine-word{font-size:22vw}.cine-subject{width:190px;bottom:18%}.cine-chip{display:none}.cine-dots{display:none}.cine-role{top:17%;width:90%;line-height:1.7}.cine-enter{bottom:28px}.cine-skip-note{display:none}}
+    html[data-motion="off"] .cinematic *{animation:none!important}
     .guide{position:fixed;left:20px;bottom:18px;z-index:80;display:flex;align-items:flex-end;gap:14px;max-width:min(420px,calc(100vw - 40px));pointer-events:none}
     .guide-character{position:relative;width:74px;height:112px;pointer-events:auto;filter:drop-shadow(0 18px 22px #0008);animation:guide-walk 7s ease-in-out infinite}
     .guide-head{position:absolute;left:20px;top:0;width:35px;height:35px;border-radius:50%;background:linear-gradient(145deg,#d8b08a,#8f5d3c);border:2px solid #e8c7a6;box-shadow:0 0 0 4px #9effa80d}
@@ -126,6 +152,22 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <div class="progress" aria-hidden="true"></div>
+
+  <section class="cinematic" id="cinematicIntro" aria-label="Cinematic portfolio intro">
+    <div class="cine-stage" aria-hidden="true">
+      <div class="cine-grid"></div>
+      <div class="cine-word">PARAKH</div>
+      <p class="cine-role">Security Engineer Portfolio <b>AI Security · API Security · Detection</b></p>
+      <div class="cine-subject"><img src="pic1111.jpg" alt=""></div>
+      <span class="cine-chip one">AegisForge</span>
+      <span class="cine-chip two">Lab-Safe Red Team</span>
+      <span class="cine-chip three">Benchmark Gates</span>
+      <span class="cine-chip four">Detection Evidence</span>
+      <div class="cine-dots"></div>
+    </div>
+    <button class="cine-enter" id="cineEnter" type="button">Enter Portfolio <span aria-hidden="true">↗</span></button>
+    <p class="cine-skip-note">Cinematic intro · press Enter or click</p>
+  </section>
 
   <aside class="guide" id="portfolioGuide" aria-label="Portfolio voice guide">
     <div class="guide-character" aria-hidden="true">
@@ -245,6 +287,20 @@
     const profile = document.getElementById('profileCard');
     const roleWord = document.getElementById('roleWord');
     const sections = [...document.querySelectorAll('main section[id]')];
+
+    const cinematicIntro = document.getElementById('cinematicIntro');
+    const cineEnter = document.getElementById('cineEnter');
+    function closeCinematicIntro() {
+      cinematicIntro.classList.add('hidden');
+      try { sessionStorage.setItem('ps-cinematic-seen', '1'); } catch (_) {}
+    }
+    try {
+      if (sessionStorage.getItem('ps-cinematic-seen') === '1') cinematicIntro.classList.add('hidden');
+    } catch (_) {}
+    cineEnter.addEventListener('click', closeCinematicIntro);
+    document.addEventListener('keydown', event => {
+      if ((event.key === 'Enter' || event.key === 'Escape') && !cinematicIntro.classList.contains('hidden')) closeCinematicIntro();
+    });
 
     const guide = document.getElementById('portfolioGuide');
     const guideText = document.getElementById('guideText');
