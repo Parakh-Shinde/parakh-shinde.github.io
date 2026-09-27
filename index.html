@@ -119,7 +119,7 @@
     .cine-enter{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);z-index:5;display:inline-flex;align-items:center;gap:16px;border:1px solid #9effa866;background:#0b1710e8;color:var(--green);padding:13px 18px;font:700 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;box-shadow:0 18px 55px #0008}
     .cine-enter:hover,.intro-replay:hover{background:#142419}.cine-enter span{font-size:18px}
     .cine-skip-note{position:absolute;left:24px;bottom:24px;z-index:5;color:#7f9385;font:400 9px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-    .intro-replay{position:fixed;right:20px;bottom:20px;z-index:65;border:1px solid #4c6f53;background:#07110bd9;color:#bdf8c4;padding:10px 13px;font:700 9px var(--mono);letter-spacing:.12em;text-transform:uppercase;box-shadow:0 18px 50px #0006}
+    .intro-replay{display:none;position:fixed;right:20px;bottom:20px;z-index:65;border:1px solid #4c6f53;background:#07110bd9;color:#bdf8c4;padding:10px 13px;font:700 9px var(--mono);letter-spacing:.12em;text-transform:uppercase;box-shadow:0 18px 50px #0006}
     @keyframes cine-word{0%{opacity:0;letter-spacing:.22em;filter:blur(18px)}65%{opacity:.12;filter:blur(0)}100%{opacity:.09;letter-spacing:-.07em}}
     @keyframes cine-walk{0%{transform:translateX(-135%) scale(.58);opacity:0;filter:blur(4px)}52%{opacity:1}100%{transform:translateX(-50%) scale(.82);opacity:1;filter:blur(0)}}
     @keyframes cine-pop{0%{opacity:0;transform:translateY(16px) scale(.96)}100%{opacity:1;transform:translateY(0) scale(1)}}
@@ -179,7 +179,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <div class="progress" aria-hidden="true"></div>
 
-  <section class="cinematic" id="cinematicIntro" aria-label="Cinematic portfolio intro">
+  <section class="cinematic hidden" id="cinematicIntro" aria-label="Cinematic portfolio intro">
     <div class="cine-stage" aria-hidden="true">
       <div class="cine-grid"></div>
       <div class="cine-word">PARAKH</div>
@@ -204,10 +204,8 @@
     </div>
     <div class="guide-bubble">
       <p id="guideText">Hi, I’m <strong>Parakh’s portfolio guide</strong>. He builds lab-safe AI Security, API Security and Detection Engineering projects backed by reproducible evidence.</p>
-      <div class="guide-actions">
-        <button class="guide-btn" id="guideSpeak" type="button">PLAY INTRO</button>
-        <button class="guide-btn" id="guideNext" type="button">NEXT</button>
-        <button class="guide-close" id="guideClose" type="button" aria-label="Hide portfolio guide">×</button>
+      <div class="guide-actions" aria-hidden="true">
+        <span class="guide-btn">AUTO INTRO</span>
       </div>
     </div>
   </aside>
@@ -215,7 +213,7 @@
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="Parakh Shinde home"><span class="brand-mark">PS</span><span class="brand-name">PARAKH<br>SHINDE</span></a>
       <nav class="nav-links" id="navigation" aria-label="Main navigation">
-        <a href="#about">Profile</a><a href="#video">Video</a><a href="#projects">Projects</a><a href="#skills">Toolkit</a><a href="#contact">Contact</a>
+        <a href="#top">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
       </nav>
       <div class="nav-actions">
         <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false" aria-label="Enable animations">Motion off</button>
@@ -233,7 +231,7 @@
             <h1 id="hero-title" data-reveal style="--delay:80ms"><span class="name-line">PARAKH</span><span class="name-line">SHINDE.</span></h1>
             <p class="hero-description" data-reveal style="--delay:160ms">Security Engineer focused on AI Security, API Security and Detection Engineering.<br><strong>Explore a 3D animated portfolio backed by lab-safe evidence.</strong></p>
             <p class="role-line" data-reveal style="--delay:220ms"><span class="sr-only">AI security, API security, detection engineering and adversary-informed defense</span><span aria-hidden="true">focus / <span class="role-word" id="roleWord">AI security</span></span></p>
-            <div class="actions" data-reveal style="--delay:260ms"><a class="btn" href="#projects">EXPLORE MY WORK <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="#contact">LET’S CONNECT ↗</a></div>
+            <div class="actions" data-reveal style="--delay:260ms"><a class="btn" href="#projects">EXPLORE PROJECTS <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="Parakh-Shinde--Resume.pdf" download>DOWNLOAD RESUME ↧</a><a class="text-link" href="#contact">CONTACT ↗</a></div>
           </div>
           <div class="portrait-stage" data-reveal style="--delay:180ms">
             <div class="orbit one" aria-hidden="true"></div><div class="orbit two" aria-hidden="true"></div>
@@ -275,36 +273,8 @@
       </div>
     </div></section>
 
-    <section class="section video-portfolio" id="video" aria-labelledby="video-title"><div class="wrap">
-      <p class="section-label mono" data-reveal><span>02 /</span> VIDEO PORTFOLIO</p>
-      <div class="section-intro" data-reveal><h2 class="section-heading" id="video-title">A recruiter-ready<br><em>security intro.</em></h2><p>A short cinematic reel that explains who I am, what I build, and why AegisForge is my hero project.</p></div>
-      <div class="video-reel" data-reveal>
-        <div class="video-stage" aria-live="polite">
-          <div class="video-hud mono"><span id="videoTime">SCENE 01 / 04</span><span class="video-bars" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <article class="video-frame active" data-scene="0"><div class="video-word">INTRO</div><img src="pic1111.jpg" alt=""><div class="video-copy"><p class="video-kicker">Security Engineer Portfolio</p><h3>Hi, I’m Parakh Shinde.</h3><p>I’m focused on AI Security, API Security, Detection Engineering and adversary-informed defense, with a portfolio built around reproducible evidence.</p></div></article>
-          <article class="video-frame" data-scene="1"><div class="video-word">BUILD</div><img src="pic1111.jpg" alt=""><div class="video-copy"><p class="video-kicker">Hero Project</p><h3>AegisForge.</h3><p>A lab-safe AI/API security platform for prompt-injection detection, guardrail testing, authorization modeling, telemetry and benchmark validation.</p></div></article>
-          <article class="video-frame" data-scene="2"><div class="video-word">SIGNAL</div><img src="pic1111.jpg" alt=""><div class="video-copy"><p class="video-kicker">Security Engineering</p><h3>I think in evidence.</h3><p>My work connects offensive thinking with defensive validation: logs, detections, benchmark gates, CI, CodeQL, and documented limitations.</p></div></article>
-          <article class="video-frame" data-scene="3"><div class="video-word">READY</div><img src="pic1111.jpg" alt=""><div class="video-copy"><p class="video-kicker">Open To Roles</p><h3>Ready to contribute.</h3><p>I’m looking for entry-level Security Engineer roles or internships where I can build, investigate, automate and keep improving secure systems.</p></div></article>
-        </div>
-        <div class="video-panel">
-          <p><strong>Portfolio reel:</strong> click Play to watch the scenes, or Voice to hear the recruiter pitch. The voice uses your browser’s speech engine, so it starts only after a click.</p>
-          <div class="video-controls">
-            <button class="video-control" id="videoPlay" type="button">Play Reel</button>
-            <button class="video-control" id="videoVoice" type="button">Voice Pitch</button>
-            <button class="video-control" id="videoNext" type="button">Next Scene</button>
-          </div>
-          <div class="scene-list" id="sceneList">
-            <button class="scene-button active" type="button" data-scene-button="0">01 / Who I am</button>
-            <button class="scene-button" type="button" data-scene-button="1">02 / AegisForge</button>
-            <button class="scene-button" type="button" data-scene-button="2">03 / Evidence mindset</button>
-            <button class="scene-button" type="button" data-scene-button="3">04 / Role target</button>
-          </div>
-          <p class="video-script" id="videoScript">Hi, I’m Parakh Shinde, an early-career security engineering candidate focused on AI Security, API Security and Detection Engineering.</p>
-        </div>
-      </div>
-    </div></section>
     <section class="section projects" id="projects" aria-labelledby="projects-title"><div class="wrap">
-      <p class="section-label mono" data-reveal><span>03 /</span> SELECTED WORK</p>
+      <p class="section-label mono" data-reveal><span>02 /</span> PROJECTS</p>
       <div class="section-intro" data-reveal><h2 class="section-heading" id="projects-title">Built to show<br><em>security judgment.</em></h2><p>Selected projects with source code, reproducible evidence, engineering quality and documented limitations.</p></div>
       <div class="project-grid">
         <article class="project featured" data-reveal>
@@ -317,13 +287,24 @@
         <article class="project" data-reveal style="--delay:80ms"><div class="project-top mono"><span class="project-number">05 / SOC DETECTION LAB</span><span class="project-icon" aria-hidden="true">≋</span></div><h3>Enterprise SOC Monitoring</h3><p>A Splunk lab bringing together Windows/Sysmon, Linux, web and IDS telemetry. Eight documented custom SPL detections map to MITRE ATT&amp;CK and are explored through eight controlled simulations.</p><div class="about-tags"><span class="tag">SYSMON</span><span class="tag">SURICATA</span><span class="tag">MITRE ATT&amp;CK</span></div><a class="project-link" href="https://github.com/Parakh-Shinde/Enterprise-SOC-Monitoring-Threat-Detection-Platform" target="_blank" rel="noopener noreferrer" aria-label="Explore Enterprise SOC Monitoring on GitHub, opens in a new tab">EXPLORE REPOSITORY <span aria-hidden="true">↗</span></a></article>
       </div>
     </div></section>
+
+    <section class="section education" id="education" aria-labelledby="education-title"><div class="wrap">
+      <p class="section-label mono" data-reveal><span>03 /</span> EDUCATION</p>
+      <div class="section-intro" data-reveal><h2 class="section-heading" id="education-title">Academic and<br><em>training path.</em></h2><p>Formal education and current cybersecurity training aligned with security engineering roles.</p></div>
+      <div class="skills-grid education-grid" data-reveal>
+        <div class="skill"><div class="skill-mark" aria-hidden="true">01_</div><h3 class="mono">SRMIST</h3><ul><li>MCA</li><li>Cyber Security &amp; Cyber Forensics</li><li>Expected June 2028</li></ul></div>
+        <div class="skill"><div class="skill-mark" aria-hidden="true">02_</div><h3 class="mono">RNTU</h3><ul><li>BCA</li><li>Graduated 2025</li><li>Computer applications foundation</li></ul></div>
+        <div class="skill"><div class="skill-mark" aria-hidden="true">03_</div><h3 class="mono">ACCIOJOB</h3><ul><li>Advanced Cybersecurity Program</li><li>In progress</li><li>Security labs and job-focused practice</li></ul></div>
+        <div class="skill"><div class="skill-mark" aria-hidden="true">04_</div><h3 class="mono">SELF-LED LABS</h3><ul><li>AegisForge</li><li>Detection engineering projects</li><li>Cloud and SOC simulations</li></ul></div>
+      </div>
+    </div></section>
     <section class="section" id="skills" aria-labelledby="skills-title"><div class="wrap">
-      <p class="section-label mono" data-reveal><span>04 /</span> THE TOOLKIT</p><h2 class="section-heading" id="skills-title" data-reveal>Tools behind<br><em>the work.</em></h2>
+      <p class="section-label mono" data-reveal><span>04 /</span> SKILLS</p><h2 class="section-heading" id="skills-title" data-reveal>Tools behind<br><em>the work.</em></h2>
       <div class="skills-grid" data-reveal><div class="skill"><div class="skill-mark" aria-hidden="true">01_</div><h3 class="mono">AI &amp; API SECURITY</h3><ul><li>Prompt injection labs</li><li>API authorization testing</li><li>garak / Ollama</li><li>Python evaluation harnesses</li></ul></div><div class="skill"><div class="skill-mark" aria-hidden="true">02_</div><h3 class="mono">API &amp; CLOUD SECURITY</h3><ul><li>API authorization testing</li><li>AWS CloudTrail / WAF</li><li>VPC Flow Logs</li><li>Terraform</li></ul></div><div class="skill"><div class="skill-mark" aria-hidden="true">03_</div><h3 class="mono">DETECTION</h3><ul><li>Splunk SPL</li><li>MITRE ATT&amp;CK</li><li>Alert validation</li><li>Controlled simulations</li></ul></div><div class="skill"><div class="skill-mark" aria-hidden="true">04_</div><h3 class="mono">SYSTEMS &amp; SIGNALS</h3><ul><li>Windows / Sysmon</li><li>Linux logs</li><li>Suricata</li><li>Python automation</li></ul></div></div>
     </div></section>
     <section class="section contact" id="contact" aria-labelledby="contact-title"><div class="wrap">
-      <p class="section-label mono" data-reveal><span>05 /</span> OPEN CHANNEL</p>
-      <div class="contact-grid"><div data-reveal><h2 class="section-heading" id="contact-title">LET’S BUILD<br><em>SAFER SYSTEMS.</em></h2><p class="contact-copy">Looking for an entry-level Security Engineer role or internship where I can contribute to AI Security, API Security, Detection Engineering and security automation.</p><a class="email" href="mailto:parakhshinde15@gmail.com">parakhshinde15@gmail.com <span aria-hidden="true">↗</span></a><div class="socials"><a href="https://www.linkedin.com/in/parakh-shinde/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href="https://github.com/Parakh-Shinde" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></div></div><div class="contact-side" data-reveal style="--delay:100ms"><div class="contact-block"><h3 class="mono">EDUCATION</h3><p>SRMIST — MCA, Cyber Security &amp; Cyber Forensics<br>Expected June 2028</p><p>RNTU — BCA · 2025</p></div><div class="contact-block"><h3 class="mono">CURRENT TRAINING</h3><p>Advanced Cybersecurity Program (AccioJob)<br>In progress</p></div><div class="contact-block"><h3 class="mono">LOCATION</h3><p>Bengaluru, India<br>Open to onsite opportunities across India.</p></div></div></div>
+      <p class="section-label mono" data-reveal><span>05 /</span> CONTACT</p>
+      <div class="contact-grid"><div data-reveal><h2 class="section-heading" id="contact-title">LET’S BUILD<br><em>SAFER SYSTEMS.</em></h2><p class="contact-copy">Looking for an entry-level Security Engineer role or internship where I can contribute to AI Security, API Security, Detection Engineering and security automation.</p><a class="email" href="mailto:parakhshinde15@gmail.com">parakhshinde15@gmail.com <span aria-hidden="true">↗</span></a><br><a class="email" href="Parakh-Shinde--Resume.pdf" download>Download Resume <span aria-hidden="true">↧</span></a><div class="socials"><a href="https://www.linkedin.com/in/parakh-shinde/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href="https://github.com/Parakh-Shinde" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></div></div><div class="contact-side" data-reveal style="--delay:100ms"><div class="contact-block"><h3 class="mono">ROLE TARGET</h3><p>Security Engineer · AI Security · API Security · Detection Engineering</p></div><div class="contact-block"><h3 class="mono">AVAILABILITY</h3><p>Open to entry-level roles and internships across India.</p></div><div class="contact-block"><h3 class="mono">LOCATION</h3><p>Bengaluru, India<br>Open to onsite opportunities across India.</p></div></div></div>
     </div></section>
   </main>
   <footer><div class="wrap footer-inner mono"><span>© <span id="year">2026</span> PARAKH SHINDE</span><span>BUILT WITH CURIOSITY. BACKED BY EVIDENCE.</span><a class="back-top" href="#top">BACK TO TOP ↑</a></div></footer>
@@ -364,85 +345,38 @@
     });
 
 
-    const videoFrames = [...document.querySelectorAll('.video-frame')];
-    const sceneButtons = [...document.querySelectorAll('[data-scene-button]')];
-    const videoPlay = document.getElementById('videoPlay');
-    const videoVoice = document.getElementById('videoVoice');
-    const videoNext = document.getElementById('videoNext');
-    const videoTime = document.getElementById('videoTime');
-    const videoScript = document.getElementById('videoScript');
-    const videoLines = [
-      'Hi, I’m Parakh Shinde, an early-career security engineering candidate focused on AI Security, API Security and Detection Engineering.',
-      'My hero project is AegisForge, a lab-safe AI and API security platform with prompt injection detection, authorization modeling, telemetry and benchmark gates.',
-      'I build with a security engineering mindset: controlled experiments, clean code, logs, detections, CI, CodeQL and documented limitations.',
-      'I am looking for entry-level Security Engineer roles or internships where I can build, investigate, automate and keep improving secure systems.'
-    ];
-    let videoIndex = 0;
-    let videoTimer = 0;
-    function setVideoScene(index) {
-      videoIndex = (index + videoFrames.length) % videoFrames.length;
-      videoFrames.forEach((frame, frameIndex) => frame.classList.toggle('active', frameIndex === videoIndex));
-      sceneButtons.forEach((button, buttonIndex) => button.classList.toggle('active', buttonIndex === videoIndex));
-      videoTime.textContent = 'SCENE ' + String(videoIndex + 1).padStart(2, '0') + ' / 04';
-      videoScript.textContent = videoLines[videoIndex];
-    }
-    function playVideoReel() {
-      window.clearInterval(videoTimer);
-      setVideoScene(0);
-      videoTimer = window.setInterval(() => {
-        setVideoScene(videoIndex + 1);
-        if (videoIndex === videoFrames.length - 1) window.clearInterval(videoTimer);
-      }, 3300);
-    }
-    function speakVideoPitch() {
-      if (!('speechSynthesis' in window)) {
-        videoScript.textContent = 'Voice is not supported in this browser, but the full video pitch is written here.';
-        return;
-      }
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(videoLines.join(' '));
-      utterance.rate = 0.9;
-      utterance.pitch = 1;
-      utterance.volume = 0.92;
-      window.speechSynthesis.speak(utterance);
-      playVideoReel();
-    }
-    videoPlay.addEventListener('click', playVideoReel);
-    videoVoice.addEventListener('click', speakVideoPitch);
-    videoNext.addEventListener('click', () => setVideoScene(videoIndex + 1));
-    sceneButtons.forEach(button => button.addEventListener('click', () => setVideoScene(Number(button.dataset.sceneButton))));
-
     const guide = document.getElementById('portfolioGuide');
     const guideText = document.getElementById('guideText');
-    const guideSpeak = document.getElementById('guideSpeak');
-    const guideNext = document.getElementById('guideNext');
-    const guideClose = document.getElementById('guideClose');
     const guideLines = [
-      'Hi, I am Parakh\'s portfolio guide. He is focused on AI Security, API Security and Detection Engineering.',
-      'His hero project is AegisForge, a lab-safe AI and API security platform with benchmark gates, CI, CodeQL and demo evidence.',
-      'He works with Python, FastAPI, Splunk, MITRE ATT&CK, telemetry, alert validation and security automation.',
-      'He is looking for entry-level Security Engineer roles and internships where he can build, investigate and keep learning.'
+      'Hi, I am Parakh Shinde. I focus on AI Security, API Security and Detection Engineering.',
+      'My hero project is AegisForge, a lab-safe AI and API security platform with prompt injection detection, authorization modeling and benchmark gates.',
+      'I build with evidence: clean code, telemetry, detections, CI, CodeQL, documented limits and reproducible results.',
+      'I am open to entry-level Security Engineer roles and internships where I can build, investigate and improve secure systems.'
     ];
     let guideIndex = 0;
     function setGuideLine(index) {
       guideIndex = index % guideLines.length;
-      guideText.innerHTML = guideLines[guideIndex].replace('AegisForge', '<strong>AegisForge</strong>').replace('AI Security, API Security and Detection Engineering', '<strong>AI Security, API Security and Detection Engineering</strong>');
+      guideText.innerHTML = guideLines[guideIndex]
+        .replace('Parakh Shinde', '<strong>Parakh Shinde</strong>')
+        .replace('AegisForge', '<strong>AegisForge</strong>')
+        .replace('AI Security, API Security and Detection Engineering', '<strong>AI Security, API Security and Detection Engineering</strong>');
     }
-    function speakGuide() {
-      if (!('speechSynthesis' in window)) {
-        guideText.textContent = 'Voice is not supported in this browser, but you can still read the intro here.';
-        return;
-      }
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(guideLines[guideIndex]);
-      utterance.rate = 0.92;
-      utterance.pitch = 1;
-      utterance.volume = 0.9;
-      window.speechSynthesis.speak(utterance);
+    function autoSpeakGuide() {
+      if (!('speechSynthesis' in window)) return;
+      try {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(guideLines.join(' '));
+        utterance.rate = 0.92;
+        utterance.pitch = 1;
+        utterance.volume = 0.9;
+        window.speechSynthesis.speak(utterance);
+      } catch (_) {}
     }
-    guideSpeak.addEventListener('click', speakGuide);
-    guideNext.addEventListener('click', () => { setGuideLine(guideIndex + 1); speakGuide(); });
-    guideClose.addEventListener('click', () => { window.speechSynthesis?.cancel(); guide.classList.add('hidden'); });
+    window.setInterval(() => setGuideLine(guideIndex + 1), 4200);
+    window.addEventListener('load', () => {
+      setGuideLine(0);
+      window.setTimeout(autoSpeakGuide, 900);
+    }, {once:true});
     const sectionLinks = [...navigation.querySelectorAll('a')];
     const roles = ['AI security', 'API security', 'detection engineering', 'adversary-informed defense'];
     let motion = false, roleIndex = 0, roleTimer = 0, roleAnimation = null;
